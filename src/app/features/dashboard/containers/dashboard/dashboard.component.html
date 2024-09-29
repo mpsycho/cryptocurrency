@@ -1,0 +1,122 @@
+<mat-card>
+  <mat-card-header>
+    <div class="header-content">
+      <mat-card-title class="title">Cryptocurrency Market</mat-card-title>
+      <mat-form-field appearance="outline" class="filter">
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. Id, Name, Symbol"
+        />
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="mat-elevation-z8">
+      <table
+        mat-table
+        *ngIf="cryptos$ | async"
+        [dataSource]="dataSource"
+        matSort
+        (matSortChange)="announceSortChange($event)"
+      >
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            matTooltipPosition="right"
+            matTooltipShowDelay="500"
+            matTooltipClass="custom-tooltip"
+            [matTooltip]="element | jsonStringify"
+          >
+            {{ element.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by name"
+          >
+            Name
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Symbol</th>
+          <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="current_price">
+          <th mat-header-cell *matHeaderCellDef>Current price</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.current_price }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="market_cap">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by market cap"
+          >
+            Market Cap
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.market_cap }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_volume">
+          <th mat-header-cell *matHeaderCellDef>Total volume</th>
+          <td mat-cell *matCellDef="let element">{{ element.total_volume }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="high_24h">
+          <th mat-header-cell *matHeaderCellDef>High 24h</th>
+          <td mat-cell *matCellDef="let element">{{ element.high_24h }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="low_24h">
+          <th mat-header-cell *matHeaderCellDef>Low 24h</th>
+          <td mat-cell *matCellDef="let element">{{ element.low_24h }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price_change_percentage_24h">
+          <th mat-header-cell *matHeaderCellDef>Price change percentage 24h</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.price_change_percentage_24h }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="circulating_supply">
+          <th mat-header-cell *matHeaderCellDef>Circulating supply</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.circulating_supply }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20, 50, 100]"
+        showFirstLastButtons
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<highcharts-chart
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  style="width: 100%; height: 400px; display: block"
+></highcharts-chart>

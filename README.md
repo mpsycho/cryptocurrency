@@ -6,22 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Project Overview
+This project is an Angular-based dashboard application that fetches cryptocurrency data from the CoinGecko API, displays it in a table, and visualizes it in a chart. The application is built with a focus on filtering, sorting, searching, pagination, and visualizing data using Highcharts. Additionally, it uses NgRx for state management and RxJS for data transportation and manipulation to ensure a unidirectional data flow.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Key Features
+Data fetching from the CoinGecko API to display cryptocurrency data in a table format.
+Filtering, sorting, and searching within the table.
+Pagination to handle large datasets.
+Chart visualization using Highcharts to display the top cryptocurrencies by market capitalization.
+Tooltips on hover, displaying detailed information about each cryptocurrency.
+State management using NgRx with actions, reducers, selectors, and effects.
+Responsive design using Angular Material for UI components, ensuring usability across devices.
 
-## Build
+Setup and Installation
+Prerequisites
+Node.js and npm (Node Package Manager)
+Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Install dependencies: yarn install
+Run the application: ng serve
