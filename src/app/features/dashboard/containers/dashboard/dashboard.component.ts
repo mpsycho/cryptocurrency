@@ -14,9 +14,9 @@ import { tap } from 'rxjs';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { JasonStringifyPipe } from '../../../../core/pipes/jason-stringify.pipe';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ObjectToStringPipe } from '../../../../core/pipes/object-to-string.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,7 +31,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatFormFieldModule,
     MatInputModule,
     MatTooltipModule,
-    JasonStringifyPipe,
+    ObjectToStringPipe,
     HighchartsChartModule,
   ],
 

@@ -16,7 +16,9 @@ export class DashboardEffects {
           ),
           catchError((error) => {
             console.error('loadCryptos effect caught an error:', error.message);
-            return of(DashBoardActions.loadCryptoFailure({ error }));
+            return of(
+              DashBoardActions.loadCryptoFailure({ error: error.message })
+            );
           })
         )
       )

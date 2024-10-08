@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { JasonStringifyPipe } from './jason-stringify.pipe';
+import { ObjectToStringPipe } from './object-to-string.pipe';
 
-describe('Pipe: JasonStringifye', () => {
+describe('Pipe: ObjectToStringe', () => {
   it('create an instance', () => {
-    let pipe = new JasonStringifyPipe();
+    let pipe = new ObjectToStringPipe();
     expect(pipe).toBeTruthy();
   });
 });

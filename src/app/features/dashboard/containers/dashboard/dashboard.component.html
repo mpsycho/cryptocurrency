@@ -29,8 +29,7 @@
             *matCellDef="let element"
             matTooltipPosition="right"
             matTooltipShowDelay="500"
-            matTooltipClass="custom-tooltip"
-            [matTooltip]="element | jsonStringify"
+            [matTooltip]="element | objectToString"
           >
             {{ element.id }}
           </td>
