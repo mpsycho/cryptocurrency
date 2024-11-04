@@ -16,7 +16,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { ObjectToStringPipe } from '../../../../core/pipes/object-to-string.pipe';
+import { ObjectToStringPipe } from '../../../../shared/pipes/object-to-string.pipe';
 
 @Component({
   selector: 'app-dashboard',

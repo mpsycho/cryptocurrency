@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './containers/dashboard/dashboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +9,7 @@ import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './layouts/main-layout/header/header.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
