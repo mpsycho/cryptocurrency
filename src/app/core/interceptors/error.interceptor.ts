@@ -12,9 +12,9 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
   intercept(
-    req: HttpRequest<any>,
+    req: HttpRequest<unknown>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  ): Observable<HttpEvent<unknown>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         let errorMessage = '';

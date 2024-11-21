@@ -1,26 +1,123 @@
-table {
-  width: 100%;
-}
-
 mat-card {
   margin: 5%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .header-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .title {
   text-align: center;
   width: 100%;
-  margin-bottom: 10px;
+  transition: font-size 0.3s ease; // Smooth transition for font size changes
 }
 
 .filter {
   align-self: flex-end;
   width: 100%;
   max-width: 300px;
+}
+
+.mat-elevation-z8 {
+  overflow-x: auto; // Enables horizontal scroll for table on small screens
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .filter {
+    width: 80%;
+    max-width: 250px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .title {
+    font-size: 20px; // Adjust font size for medium screens
+  }
+
+  table {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter {
+    width: 100%;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+
+  mat-card {
+    margin: 3%;
+  }
+
+  .title {
+    font-size: 18px; // Reduce font size for small screens
+  }
+
+  table {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  mat-paginator {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .filter {
+    width: 100%;
+    margin-top: 10px;
+    max-width: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .mat-elevation-z8 {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    font-size: 10px;
+    min-width: 600px; // Forces horizontal scroll on small screens if columns don't fit
+  }
+
+  mat-card {
+    margin: 0 2%;
+  }
+
+  mat-paginator {
+    font-size: 10px;
+  }
 }

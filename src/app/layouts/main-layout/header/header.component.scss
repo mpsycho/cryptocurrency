@@ -9,15 +9,51 @@
   .wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .logo {
     height: 50px;
     margin-right: 20px;
+    transition: height 0.3s ease; // Smooth transition for size change
   }
 
   .title {
     font-size: 24px;
     font-weight: bold;
+    transition: font-size 0.3s ease; // Smooth transition for font size change
+  }
+
+  // Medium screens
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    .logo {
+      height: 40px; // Reduce logo size
+      margin-right: 15px;
+    }
+
+    .title {
+      font-size: 20px; // Reduce title size
+    }
+  }
+
+  // Small screens
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    .wrapper {
+      flex-direction: column;
+      text-align: center; // Center align for vertical stacking
+    }
+
+    .logo {
+      height: 35px;
+      margin: 0 0 10px 0; // Adjust margin for vertical layout
+    }
+
+    .title {
+      font-size: 18px;
+    }
   }
 }
